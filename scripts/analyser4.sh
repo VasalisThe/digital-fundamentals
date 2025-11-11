@@ -6,13 +6,17 @@ do
   for j in $(cat $1$i)
   do
     age=$(echo $j | cut -d ":" -f2)
+    
     if [ $age -lt $min ]
     then
       min=$age
-    elif [ $age -gt $max ]
+    fi
+    
+    if [ $age -gt $max ]
     then
       max=$age
     fi
+    
   done
 done
 
